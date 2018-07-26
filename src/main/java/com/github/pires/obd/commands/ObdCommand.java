@@ -374,8 +374,12 @@ public abstract class ObdCommand {
      * @return a {@link java.lang.String} object.
      * @since 1.0-RC12
      */
-    public final String getCommandPID() {
+    public String getCommandPID() {
         return cmd.substring(3);
+    }
+
+    public String getCommandId() {
+        return cmd;
     }
 
     /**
@@ -383,7 +387,7 @@ public abstract class ObdCommand {
      *
      * @return a {@link java.lang.String} object.
      */
-    public final String getCommandMode() {
+    public String getCommandMode() {
         if (cmd.length() >= 2) {
             return cmd.substring(0, 2);
         } else {
